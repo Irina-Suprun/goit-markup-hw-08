@@ -1,0 +1,29 @@
+/* Чем мы занимаемся */
+.work {
+  padding-top: 0;
+  @media screen and (max-width: 1199px) {
+      display: none;
+    }
+}
+.work__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.work__picture {
+  position: relative;
+}
+.work__text {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $whiteColor;
+  background: $workBg;
+}

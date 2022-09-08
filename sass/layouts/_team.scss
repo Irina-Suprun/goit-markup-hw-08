@@ -1,0 +1,78 @@
+/* Наша команда */
+.team {
+    background-color: $sectionBg;
+    .title {
+    @include desktop {
+            margin-bottom: 50px;
+        }
+    }
+}
+.team__list {
+    display: flex;
+flex-wrap: wrap;
+gap: 30px;
+}
+.employee {
+    box-shadow: $teamShadow;
+    border-radius: $borderRadius; 
+    background-color: $whiteColor;
+    @include tablet {
+      width: calc((100% - 30px) / 2);
+    }
+    @include desktop {
+          width: calc((100% - 90px) / 4);
+    }
+}
+.employee__wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.employee__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: $titleColor;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    letter-spacing: 0.03em;
+    
+}
+.employee__text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 16px;
+}
+
+.soc {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.soc__link {
+    transition-property: background-color, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $grey;
+&:hover,
+    &:focus {
+        background-color: $accentColor;
+        color: $whiteColor;
+    }
+}
+
+.soc__icon {
+    fill: currentColor;
+}
+
