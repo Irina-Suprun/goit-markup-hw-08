@@ -38,18 +38,20 @@
     flex-wrap: wrap;
     gap: 60px;
   }
-
   @include tablet {
     justify-content: space-around;
+    align-items: baseline;
   }
   @include desktop {
     align-items: baseline;
+    justify-content: space-between;
   }
+  
 }
 
 .connect {
   @include desktop {
-    margin-left: 70px;
+    // margin-left: 70px;
     padding: 0;
   }
 }
@@ -63,6 +65,9 @@
   color: $whiteColor;
   text-align: center;
   margin-bottom: 20px;
+  @include desktop {
+    text-align: start;
+  }
 }
 
 .connect__list {
@@ -98,7 +103,7 @@
     max-width: 450px;
   }
   @include desktop {
-    margin-left: auto;
+    max-width: 570px;
   }
 }
 
@@ -126,6 +131,7 @@
   line-height: 1.25;
   background-color: transparent;
   color: $whiteColor;
+  
   &:focus {
     outline-color: $accentColor;
   }
@@ -133,6 +139,7 @@
     border: 1px solid $accentColor;
   }
   @include desktop {
+    margin-bottom: 0;
     width: 358px;
   }
 }
@@ -150,3 +157,4 @@
 .subscription__icons {
   margin-left: 10px;
 }
+

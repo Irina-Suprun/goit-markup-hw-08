@@ -2,12 +2,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+   
 }
 .site-nav {
     display: flex;
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 767px) {
             display: none;;
         }
+    @include tablet {
+        margin-left: 70px;
+    }
+    @include desktop {
+        margin-left: 90px;
+    }
     }
 .site-nav__item:not(:last-child) {
     margin-right: 50px;
@@ -45,14 +52,28 @@
 }
 .contact {
     display: flex;
-    margin-left: auto;
-    @media screen and (max-width: 1200px) {
+    margin-left: 60px;
+    @media screen and (max-width: 767px) {
             display: none;
+        }
+        @include tablet {
+            flex-wrap: wrap;
+            row-gap: 10px;
+        }
+        @include desktop {
+            margin-left: auto;
         }
 }
 .contact__item:nth-child(2) {
     margin-left: 50px;
+    @include tablet {
+        margin-left: 0;
+    }
+    @include desktop {
+        margin-left: 50px;
+    }
 }
+   
 
 .contact__link {
     transition-property: color;
@@ -67,6 +88,14 @@
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: $primaryText;
+    @include tablet {
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: 12px;
+        }
+        @include desktop
+            {font-size: 14px;
+            }    
     &:hover,
     &:focus {
     color: $accentColor;
@@ -78,12 +107,10 @@
 .menu {
     margin: 0;
     background-color: transparent;
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 768px) {
             display: none;
         }
 }
-
-
 .modal-mob {
     position: fixed;
     background-color: $whiteColor;
@@ -102,8 +129,8 @@
 
 .modal-mob__close {
     position: absolute;
-        top: 10px;
-        right: 15px;
+    top: 10px;
+    right: 15px;
     width: 40px;
     height: 40px;
     background-color: $whiteColor;
@@ -157,7 +184,7 @@ letter-spacing: 0.02em;
 color: $accentColor;
 }
 .mob-mail {
-    margin-bottom: 64px;
+    margin-bottom: 50px;
 }
 .mob-mail__link {
     font-weight: 500;
@@ -166,8 +193,11 @@ color: $accentColor;
         letter-spacing: 0.02em;
         color: $primaryText;
 }
+
 .modal-soc {
 display: flex;
+flex-wrap: wrap;
+row-gap: 15px;
 margin-bottom: 48px;
 }
 

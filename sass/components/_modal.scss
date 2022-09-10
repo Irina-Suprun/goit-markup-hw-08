@@ -9,6 +9,7 @@
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .modal {
     position: absolute;
     top: 50%;
@@ -17,15 +18,27 @@
     transition-property: transform;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: 581px;
-    min-width: 528px;
+    height: 600px;
+    width: 300px;
     border-radius: 4px;
     padding: 40px;
     background-color: $whiteColor;
+
     .backdrop.backdrop--hidden & {
-            transform: scale(0);
-        }
+        transform: scale(0);
+    }
+
+    @include mobile {
+        width: 450px;
+        height: 609px;
+    }
+
+    @include desktop {
+        width: 528px;
+        min-height: 581px;
+    }
 }
+
 .modal__close {
     transition-property: fill;
     transition-duration: 250ms;
@@ -39,11 +52,13 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     background-color: $whiteColor;
+
     &:hover,
     &:focus {
         fill: $accentColor;
     }
 }
+
 .modal__title {
     text-align: center;
     margin-bottom: 12px;
@@ -54,9 +69,12 @@
     letter-spacing: 0.03em;
     color: $titleColor;
 }
+
 .field {
     margin-bottom: 10px;
+
 }
+
 .field__title {
     font-style: normal;
     font-weight: 400;
@@ -64,9 +82,12 @@
     line-height: 1.17;
     letter-spacing: 0.01em;
 }
+
 .field__wrapper {
     position: relative;
+    max-width: 370px;
 }
+
 .field__input {
     transition-property: outline-color, border;
     transition-duration: 250ms;
@@ -82,14 +103,17 @@
     line-height: 1.17;
     letter-spacing: 0.01em;
     color: $primaryText;
+
     &:focus {
-    outline-color: $accentColor;
+        outline-color: $accentColor;
+    }
+
+    .field:focus-within &,
+    .field:hover & {
+        border: 1px solid $accentColor;
+    }
 }
-.field:focus-within &,
-.field:hover & {
-    border: 1px solid $accentColor;
-}
-}
+
 .field__icon {
     transition-property: fill;
     transition-duration: 250ms;
@@ -98,24 +122,31 @@
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    
+
     .field__input:focus+& {
-    fill: $accentColor;
+        fill: $accentColor;
+    }
+
+    .field:focus-within &,
+    .field:hover & {
+        fill: $accentColor;
+    }
 }
-.field:focus-within &,
-.field:hover & {
-    fill: $accentColor;
-}
-}
+
 .field__comment {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 480px) {
+        margin-bottom: 20px;
+    }
 }
+
 .field__textarea {
     transition-property: outline-color, border;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
-    height: 120px;
+    height: 90px; 
+    // 120px
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     resize: none;
@@ -127,25 +158,37 @@
     line-height: 1.17;
     letter-spacing: 0.01em;
     color: $primaryText;
+    @media screen and (min-width: 480px){
+        height: 120px;
+    }
+
     &:focus {
-    outline-color: $accentColor;
+        outline-color: $accentColor;
+    }
+
+    .field__comment:focus-within &,
+    .field__comment:hover & {
+        border: 1px solid $accentColor;
+    }
 }
-.field__comment:focus-within &,
-.field__comment:hover & {
-    border: 1px solid $accentColor;
-}
-}
+
 .checkbox {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 480px) {
+        margin-bottom: 30px;
+    }
 }
+
 .checkbox__label {
     font-weight: 400;
     line-height: 1.71;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 12px;
 }
-    .checkbox__image {
+
+.checkbox__image {
     transition-property: background-color, border, border-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -154,22 +197,26 @@
     border: 2px solid $titleColor;
     border-radius: 3px;
     margin-right: 8px;
+
     .checkbox__input:checked+.checkbox__label & {
-            background-color: $accentColor;
-            border: none;
-        }
-.checkbox__input:focus+.checkbox__label &,
-.checkbox__input:hover+.checkbox__label & {
-    border-color: $accentColor;
-}
+        background-color: $accentColor;
+        border: none;
+    }
+
+    .checkbox__input:focus+.checkbox__label &,
+    .checkbox__input:hover+.checkbox__label & {
+        border-color: $accentColor;
+    }
 }
 
 .checkbox-icon {
     fill: transparent;
+
     .checkbox__input:checked+.checkbox__label & {
-    fill: $whiteColor;
+        fill: $whiteColor;
+    }
 }
-}
+
 .contract-link {
     color: $accentColor;
     margin-left: 5px;
