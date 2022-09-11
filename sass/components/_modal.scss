@@ -85,7 +85,6 @@
 
 .field__wrapper {
     position: relative;
-    max-width: 370px;
 }
 
 .field__input {
@@ -146,7 +145,6 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
     height: 90px; 
-    // 120px
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     resize: none;

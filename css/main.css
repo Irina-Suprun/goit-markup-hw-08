@@ -252,7 +252,6 @@ body {
 
 .field__wrapper {
   position: relative;
-  max-width: 370px;
 }
 
 .field__input {
@@ -1382,8 +1381,8 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+  -webkit-transform: translateY(101%);
+          transform: translateY(101%);
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   transition-property: transform;
